@@ -16,6 +16,7 @@ import (
 	"runtime"
 	"strconv"
 	"strings"
+	"time"
 )
 
 type config struct {
@@ -640,6 +641,7 @@ User Commands:
 }
 
 func main() {
+	rand.Seed(time.Now().UnixNano())
 	flag.Parse()
 	if flag.NArg() <= 1 {
 		usage()
